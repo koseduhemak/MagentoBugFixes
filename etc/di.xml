@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Koseduhemak/MagentoBugFixes
+ *
+ * @category Magento2_Module
+ * @package  MagentoBugFixes
+ * @author   Koseduhemak <koseduhemak@gmail.com>
+ * @version  1.0.0
+ * @link     https://github.com/koseduhemak
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Fix: old price (if special price exists) was displayed without tax -->
+    <preference for="Magento\GroupedProduct\Model\Product\Type\Grouped" type="Koseduhemak\MagentoBugFixes\Magento_GroupedProduct\Model\Product\Type\Grouped" />
+    <preference for="Magento\ConfigurableProduct\Pricing\Price\ConfigurableRegularPrice" type="Koseduhemak\MagentoBugFixes\Magento_ConfigurableProduct\Pricing\Price\ConfigurableRegularPrice" />
+
+    <!-- Fix: sorting of attributes enhanced (shoe size now sorted asc) -->
+    <preference for="Magento\ConfigurableProduct\Model\ResourceModel\Product\Type\Configurable" type="Koseduhemak\MagentoBugFixes\Magento_ConfigurableProduct\Model\ResourceModel\Product\Type\Configurable" />
+
+    <!-- Fix: enhanced layout of PDF invoice (price correctly placed) -->
+    <preference for="Magento\Sales\Model\Order\Pdf\Invoice" type="Koseduhemak\MagentoBugFixes\Magento_Sales\Model\ResourceModel\Order\Invoice\Collection\Invoice" />
+    <preference for="Magento\Sales\Model\Order\Pdf\Items\Invoice\DefaultInvoice" type="Koseduhemak\MagentoBugFixes\Magento_Sales\Model\Order\Pdf\Items\Invoice\DefaultInvoice" />
+
+    <!-- Fix: no attributes shown in filter navigation for newly created products -->
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Attribute" type="Koseduhemak\MagentoBugFixes\Magento_CatalogSearch\Model\Layer\Filter\Attribute" />
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Decimal" type="Koseduhemak\MagentoBugFixes\Magento_CatalogSearch\Model\Layer\Filter\Decimal" />
+    <preference for="Magento\CatalogSearch\Model\Layer\Filter\Category" type="Koseduhemak\MagentoBugFixes\Magento_CatalogSearch\Model\Layer\Filter\Category" />
+
+    <!-- Fix: wrong sort by price (price calculation is wrong / weird for configurable products) -->
+    <preference for="Magento\ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable" type="Koseduhemak\MagentoBugFixes\Magento_ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable" />
+
+    <!-- Fix: Tax rounding fix: f.e. 76 € = 63,865 * 1,19 instead 76,01 € = 63,86 * 1,19 -->
+    <preference for="Magento\Directory\Model\PriceCurrency" type="Koseduhemak\MagentoBugFixes\TaxRounding\Model\PriceCurrency" />
+    <type name="Magento\Catalog\Pricing\Price\RegularPrice">
+        <arguments>
+            <argument name="priceCurrency" xsi:type="object">Koseduhemak\MagentoBugFixes\TaxRounding\Model\PriceCurrency</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Tax\Model\Calculation">
+        <arguments>
+            <argument name="priceCurrency" xsi:type="object">Koseduhemak\MagentoBugFixes\TaxRounding\Model\PriceCurrency</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Item">
+        <arguments>
+            <argument name="priceCurrency" xsi:type="object">Koseduhemak\MagentoBugFixes\TaxRounding\Model\PriceCurrency</argument>
+        </arguments>
+    </type>
+
+    <!-- Feature: Default weight in admin panel is 1, if product has weight -->
+    <preference for="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\General" type="Koseduhemak\MagentoBugFixes\Magento_Catalog\Ui\DataProvider\Product\Form\Modifier\General" />
+</config>

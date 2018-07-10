@@ -1,0 +1,24 @@
+{
+	"name": "koseduhemak/magento-bug-fixes",
+	"description": "Fixes various bugs in Magento",
+	"require": {
+		"php": "~5.5.0|~5.6.0|~7.0.0",
+		"magento/framework": "^100.0.0"
+	},
+	"autoload": {
+		"files": [ "registration.php" ],
+		"psr-4": {
+			 "Koseduhemak\\MagentoBugFixes\\": ""
+		}
+	},
+	"type": "magento2-module",
+	"version": "1.0.0",
+	"license": "proprietary",
+	"authors": [
+		{
+			"name": "Koseduhemak",
+			"homepage": "https://github.com/koseduhemak",
+			"role": "Developer"
+		}
+	]
+}
