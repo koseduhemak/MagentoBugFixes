@@ -65,3 +65,11 @@ Dateien:
 Dateien:
 
 * `Koseduhemak/MagentoBugFixes/Magento_Catalog/Ui/DataProvider/Product/Form/Modifier/General`
+
+## Standard-Sortierung: Neueste Produkte absteigend
+
+* Stackoverflow: https://magento.stackexchange.com/questions/96095/magento-2-how-to-add-custom-sort-by-option
+
+Dateien: 
+* `Koseduhemak/MagentoBugFixes/SortNewestFirst/Plugin/Model/Config.php`
+* `Koseduhemak/MagentoBugFixes/SortNewestFirst/Magento_Catalog/Block/Product/ProductList/Toolbar.php`

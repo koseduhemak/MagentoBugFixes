@@ -51,4 +51,10 @@
 
     <!-- Feature: Default weight in admin panel is 1, if product has weight -->
     <preference for="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\General" type="Koseduhemak\MagentoBugFixes\Magento_Catalog\Ui\DataProvider\Product\Form\Modifier\General" />
+
+    <!-- Sort by newest DESC -->
+    <type name="Magento\Catalog\Model\Config">
+        <plugin name="Koseduhemak_SortNewestFirst::afterGetAttributeUsedForSortByArray" type="Koseduhemak\MagentoBugFixes\SortNewestFirst\Plugin\Model\Config" />
+    </type>
+    <preference for="Magento\Catalog\Block\Product\ProductList\Toolbar" type="Koseduhemak\MagentoBugFixes\SortNewestFirst\Magento_Catalog\Block\Product\ProductList\Toolbar" />
 </config>
