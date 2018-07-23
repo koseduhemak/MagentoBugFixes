@@ -73,3 +73,4 @@ Dateien:
 Dateien: 
 * `Koseduhemak/MagentoBugFixes/SortNewestFirst/Plugin/Model/Config.php`
 * `Koseduhemak/MagentoBugFixes/SortNewestFirst/Magento_Catalog/Block/Product/ProductList/Toolbar.php`
+* `Koseduhemak/MagentoBugFixes/view/frontend/layout/catalogsearch_result_index.xml`
