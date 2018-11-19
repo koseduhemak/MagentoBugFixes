@@ -65,25 +65,3 @@ Dateien:
 Dateien:
 
 * `Koseduhemak/MagentoBugFixes/Magento_Catalog/Ui/DataProvider/Product/Form/Modifier/General`
-
-## Standard-Sortierung: Neueste Produkte absteigend
-
-* Stackoverflow: https://magento.stackexchange.com/questions/96095/magento-2-how-to-add-custom-sort-by-option
-
-Dateien: 
-* `Koseduhemak/MagentoBugFixes/SortNewestFirst/Plugin/Model/Config.php`
-* `Koseduhemak/MagentoBugFixes/SortNewestFirst/Magento_Catalog/Block/Product/ProductList/Toolbar.php`
-* `Koseduhemak/MagentoBugFixes/view/frontend/layout/catalogsearch_result_index.xml`
-
-## Fix Datum im Admin Panel kann nicht eingegeben werden (z.B. bei Gutscheinen (aktiviert von bis))
-
-Beschreibung:
-- "Invalid date" - Datumsvalidierung funktioniert nicht für de_DE
-
-Andere Lösung:  
-- Allerdings alle Datumsfelder dann im en_US Format...: https://github.com/Magonex/module-datetime
-
-Dateien:
-* `Koseduhemak/MagentoBugFixes/view/base/web/js/lib/validation/rules.js`: Fixed `validate-date`-function.  
-* `Koseduhemak/MagentoBugFixes/view/base/web/js/lib/knockout/bindings/datepicker.js`
-* `Koseduhemak/MagentoBugFixes/view/base/requirejs-config.js`

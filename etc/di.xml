@@ -31,7 +31,8 @@
     <!-- Fix: wrong sort by price (price calculation is wrong / weird for configurable products) -->
     <preference for="Magento\ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable" type="Koseduhemak\MagentoBugFixes\Magento_ConfigurableProduct\Model\ResourceModel\Product\Indexer\Price\Configurable" />
 
-    <!-- Fix: Tax rounding fix: f.e. 76 € = 63,865 * 1,19 instead 76,01 € = 63,86 * 1,19 -->
+    <!-- DISABLED: Now we have brutto prices, we dont need this anymore -->
+    <!-- Fix: Tax rounding fix: f.e. 76 € = 63,865 * 1,19 instead 76,01 € = 63,86 * 1,19
     <preference for="Magento\Directory\Model\PriceCurrency" type="Koseduhemak\MagentoBugFixes\TaxRounding\Model\PriceCurrency" />
     <type name="Magento\Catalog\Pricing\Price\RegularPrice">
         <arguments>
@@ -47,7 +48,7 @@
         <arguments>
             <argument name="priceCurrency" xsi:type="object">Koseduhemak\MagentoBugFixes\TaxRounding\Model\PriceCurrency</argument>
         </arguments>
-    </type>
+    </type>-->
 
     <!-- Feature: Default weight in admin panel is 1, if product has weight -->
     <preference for="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\General" type="Koseduhemak\MagentoBugFixes\Magento_Catalog\Ui\DataProvider\Product\Form\Modifier\General" />
