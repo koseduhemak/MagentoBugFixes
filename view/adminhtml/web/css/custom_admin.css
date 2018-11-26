@@ -1,0 +1,3 @@
+.admin__scope-old .attributes-edit-form .field-price .control .addafter>strong, .admin__scope-old .attributes-edit-form .field-special_price .control .addafter>strong, .admin__scope-old .attributes-edit-form .field-gift_wrapping_price .control .addafter>strong, .admin__scope-old .attributes-edit-form .field-msrp .control .addafter>strong, .admin__scope-old .attributes-edit-form .field-cost .control .addafter>strong, .admin__scope-old .attributes-edit-form .field-gift_wrapping_price .control .addafter>strong {
+    position: relative !important;
+}
